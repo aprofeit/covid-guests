@@ -3,7 +3,7 @@ import { StatusBar, Text, View } from 'react-native';
 
 import Home from './components/Home';
 import NewGuest from './components/NewGuest';
-import AllGuests from './components/AllGuests';
+import Settings from './components/Settings';
 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
@@ -28,9 +28,8 @@ export default function App() {
           options={{ title: 'New Guest' }}
         />
         <Stack.Screen
-          name="AllGuests"
-          component={AllGuests}
-          options={{ title: 'All Guests' }}
+          name="Settings"
+          component={Settings}
         />
       </Stack.Navigator>
     </NavigationContainer>

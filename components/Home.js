@@ -11,7 +11,7 @@ export default function Home({ navigation }) {
       </View>
       <View style={styles.buttonList}>
         <HomeButton navigation={navigation} navigateTo="NewGuest" title="New Guest" iconName="user-plus" />
-        <HomeButton navigation={navigation} navigateTo="AllGuests" title="All Guests" iconName="lock" />
+        <HomeButton navigation={navigation} navigateTo="Settings" title="Settings" iconName="lock" />
       </View>
     </View>
   )
