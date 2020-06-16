@@ -3,6 +3,6 @@ import { Text } from 'react-native';
 
 export default function AllGuests() {
   return (
-    <Text>All Guests</Text>
+    <Text style={{fontSize: 30, padding: 20}}>All guests here</Text>
   )
 }
