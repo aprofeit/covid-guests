@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StatusBar, Text, View } from 'react-native';
 
 import Home from './components/Home';
 import NewGuest from './components/NewGuest';
@@ -14,6 +14,8 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
+
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
