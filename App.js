@@ -23,6 +23,7 @@ export default function App() {
         <Stack.Screen
           name="NewGuest"
           component={NewGuest}
+          options={{ title: 'New Guest' }}
         />
         <Stack.Screen
           name="AllGuests"

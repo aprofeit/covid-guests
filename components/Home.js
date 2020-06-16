@@ -17,6 +17,7 @@ export default function Home({ navigation }) {
           <Icon name="user-plus" style={styles.icon} />
         }
         type="clear"
+        style={styles.homeButton}
       />
       <Button
         onPress={
@@ -29,6 +30,7 @@ export default function Home({ navigation }) {
           <Icon name="lock" style={styles.icon} />
         }
         type="clear"
+        style={styles.homeButton}
       />
     </View>
   )
@@ -37,11 +39,17 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'flex-start',
   },
 
   icon: {
-    marginRight: 10,
+    width: 40,
+    marginLeft: 20,
     fontSize: 20,
     color: 'rgb(32, 137, 220)',
+  },
+
+  homeButton: {
+    marginTop: 20,
   }
 });
