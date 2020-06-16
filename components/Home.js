@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { Image, StyleSheet, View } from 'react-native';
+
+import HomeButton from './home/HomeButton';
 
 export default function Home({ navigation }) {
   return (
@@ -10,32 +10,8 @@ export default function Home({ navigation }) {
         <Image source={require('../assets/background.jpg')} style={styles.homeImage} />
       </View>
       <View style={styles.buttonList}>
-        <Button
-          onPress={
-            () => {
-              navigation.navigate('NewGuest')
-            }
-          }
-          title="New Guest"
-          icon={
-            <Icon name="user-plus" style={styles.icon} />
-          }
-          type="clear"
-          style={styles.homeButton}
-        />
-        <Button
-          onPress={
-            () => {
-              navigation.navigate('AllGuests')
-            }
-          }
-          title="All Guests"
-          icon={
-            <Icon name="lock" style={styles.icon} />
-          }
-          type="clear"
-          style={styles.homeButton}
-        />
+        <HomeButton navigation={navigation} navigateTo="NewGuest" title="New Guest" iconName="user-plus" />
+        <HomeButton navigation={navigation} navigateTo="AllGuests" title="All Guests" iconName="lock" />
       </View>
     </View>
   )
@@ -44,18 +20,6 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-
-  icon: {
-    width: 20,
-    marginLeft: 20,
-    marginRight: 20,
-    fontSize: 20,
-    color: 'rgb(32, 137, 220)',
-  },
-
-  homeButton: {
-    marginTop: 20,
   },
 
   homeImage: {
@@ -69,6 +33,5 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'white',
     width: '100%',
-    alignItems: 'flex-start',
   },
 });
