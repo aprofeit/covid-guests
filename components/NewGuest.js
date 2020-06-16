@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Layout, Text } from '@ui-kitten/components';
 
 export default function NewGuest() {
   return (
-    <Text style={{fontSize: 30, padding: 20}}>New guest form here</Text>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text category='h1'>NEW GUEST</Text>
+    </Layout>
   )
 }

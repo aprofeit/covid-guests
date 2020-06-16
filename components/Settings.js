@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Layout, Text } from '@ui-kitten/components';
 
-export default function AllGuests() {
+export default function Settings() {
   return (
-    <Text style={{fontSize: 30, padding: 20}}>All guests here</Text>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text category='h1'>SETTINGS</Text>
+    </Layout>
   )
 }
