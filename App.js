@@ -1,36 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider } from '@ui-kitten/components';
 
-import Home from './components/Home';
-import NewGuest from './components/NewGuest';
-import AllGuests from './components/AllGuests';
-
-import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
+import AppNavigator from './components/AppNavigator';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: 'Welcome' }}
-        />
-        <Stack.Screen
-          name="NewGuest"
-          component={NewGuest}
-          options={{ title: 'New Guest' }}
-        />
-        <Stack.Screen
-          name="AllGuests"
-          component={AllGuests}
-          options={{ title: 'All Guests' }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <SafeAreaView style={{flex: 1}}>
+        <StatusBar barStyle="dark-content" />
+
+        <AppNavigator />
+      </SafeAreaView>
+    </ApplicationProvider>
+  )
 };
