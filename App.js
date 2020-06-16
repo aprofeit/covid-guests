@@ -1,11 +1,30 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Home from './components/Home';
+import NewGuest from './components/NewGuest';
+
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen
+          name="NewGuest"
+          component={NewGuest}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
