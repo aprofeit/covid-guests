@@ -10,9 +10,20 @@ export default function NewGuest() {
 
   let emailInput, phoneInput;
 
+  const submitForm = () => {
+    clearForm();
+  }
+
+  const clearForm = () => {
+    setName('');
+    setEmail('');
+    setPhone('');
+    Keyboard.dismiss();
+  }
+
   return (
     <Layout style={{ flex: 1 }}>
-      <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <View style={{ flex: 1 }}>
           <Text category='h1' style={{ padding: 18 }}>Welcome</Text>
 
@@ -22,49 +33,49 @@ export default function NewGuest() {
 
       <Layout style={{ padding: 18 }}>
         <Input
-          placeholder="Name"
+          autoCapitalize="words"
           autoCompleteType="name"
           clearButtonMode="while-editing"
-          autoCapitalize="words"
+          placeholder="Name"
           size="large"
-          value={name}
-          blurOnSubmit={false}
           autoCorrect={false}
+          blurOnSubmit={false}
           style={styles.input}
+          value={name}
           onChangeText={nextValue => setName(nextValue)}
           onSubmitEditing={() => { emailInput.focus() }}
         />
 
         <Input
-          placeholder="Email"
-          clearButtonMode="while-editing"
           autoCapitalize="none"
-          keyboardType="email-address"
           autoCompleteType="email"
+          clearButtonMode="while-editing"
+          keyboardType="email-address"
+          placeholder="Email"
           size="large"
-          blurOnSubmit={false}
-          value={email}
           autoCorrect={false}
+          blurOnSubmit={false}
           style={styles.input}
-          onSubmitEditing={() => { phoneInput.focus() }}
+          value={email}
           onChangeText={nextValue => setEmail(nextValue)}
+          onSubmitEditing={() => { phoneInput.focus() }}
           ref={(input) => { emailInput = input; }}
         />
 
         <Input
-          placeholder="Phone Number"
           autoCompleteType="tel"
           clearButtonMode="while-editing"
           keyboardType="phone-pad"
+          placeholder="Phone Number"
           size="large"
           autoCorrect={false}
-          value={phone}
           style={styles.input}
+          value={phone}
           onChangeText={nextValue => setPhone(nextValue)}
           ref={(input) => { phoneInput = input; }}
         />
 
-        <Button size="large">Submit</Button>
+        <Button size="large" onPress={() => submitForm()}>Submit</Button>
       </Layout>
     </Layout>
   )
