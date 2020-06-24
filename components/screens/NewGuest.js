@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View } from 'react-native';
 import { Image, Keyboard, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { Button, Divider, Input, Layout, Text } from '@ui-kitten/components';
+
+import DatabaseContext from '../DatabaseContext';
 
 export default function NewGuest() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
-  let emailInput, phoneInput;
+  const db = useContext(DatabaseContext);
 
   const submitForm = () => {
     clearForm();
@@ -20,6 +22,8 @@ export default function NewGuest() {
     setPhone('');
     Keyboard.dismiss();
   }
+
+  let emailInput, phoneInput;
 
   return (
     <Layout style={{ flex: 1 }}>
